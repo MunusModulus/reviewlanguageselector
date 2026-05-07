@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Review Language Selector 設定</title>
+  <link rel="stylesheet" href="css/options.css">
+</head>
+<body>
+  <main class="settings-shell">
+    <header class="settings-header">
+      <h1>Review Language Selector</h1>
+      <p class="lead" data-i18n="lead">Googleレビューから指定言語のレビューだけを抽出し、その内容と平均点数を表示します。</p>
+      <p class="notice" data-i18n="notice">※ 言語の判定は、正確ではない場合があります。</p>
+    </header>
+
+    <section class="settings-panel" aria-labelledby="language-title">
+      <div class="section-heading">
+        <span class="section-mark"></span>
+        <div>
+          <h2 id="language-title" data-i18n="languageTitle">対象言語</h2>
+          <p data-i18n="languageDescription">現在は日本語レビュー抽出のみ対応しています。</p>
+        </div>
+      </div>
+
+      <label class="field-label" for="language" data-i18n="languageLabel">抽出する言語</label>
+      <div class="select-wrap">
+        <select id="language">
+          <option value="ja" data-i18n="languageJapanese">日本語</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="settings-panel" aria-labelledby="count-title">
+      <div class="section-heading">
+        <span class="section-mark"></span>
+        <div>
+          <h2 id="count-title" data-i18n="countTitle">判定件数</h2>
+          <p data-i18n="countDescription">読み込まれているレビューを対象に判定します。</p>
+        </div>
+      </div>
+
+      <label class="field-label" for="maxCount" data-i18n="maxCountLabel">最大判定件数</label>
+      <div class="number-row">
+        <input type="number" id="maxCount" min="10" max="500" step="10" inputmode="numeric">
+        <span class="unit" data-i18n="countUnit">件</span>
+      </div>
+      <p class="hint" data-i18n="scrollHint">ボタンを押した後にスクロールして追加表示されたレビューも、可能な範囲で再判定します。</p>
+      <p class="hint" data-i18n="maxCountHint">件数を増やすとより多くのレビューを判定できますが、ページが重くなる場合があります。</p>
+    </section>
+
+    <section class="settings-panel" aria-labelledby="result-title">
+      <div class="section-heading">
+        <span class="section-mark"></span>
+        <div>
+          <h2 id="result-title" data-i18n="resultTitle">結果表示</h2>
+          <p data-i18n="resultDescription">レビュー平均の表示内容を選べます。</p>
+        </div>
+      </div>
+
+      <div class="choice-group" role="radiogroup" aria-labelledby="result-title">
+        <label class="choice">
+          <input type="radio" name="display" value="both">
+          <span>
+            <strong data-i18n="displayBothTitle">平均と判定件数を表示</strong>
+            <small data-i18n="displayBothDescription">抽出件数と表示中の件数を併記します。</small>
+          </span>
+        </label>
+
+        <label class="choice">
+          <input type="radio" name="display" value="filtered">
+          <span>
+            <strong data-i18n="displayFilteredTitle">平均のみ表示</strong>
+            <small data-i18n="displayFilteredDescription">日本語レビュー平均を簡潔に表示します。</small>
+          </span>
+        </label>
+      </div>
+    </section>
+
+    <footer class="actions">
+      <button id="save" type="button" data-i18n="saveButton">保存</button>
+      <span id="status" role="status" aria-live="polite"></span>
+    </footer>
+
+    <section class="about-panel" aria-label="extension information">
+      <img class="brand-logo" src="Wacallanaides-rth2-logo.png" alt="Wacallanaides logo" data-i18n-alt="logoAlt">
+      <dl class="meta-list">
+        <div>
+          <dt data-i18n="versionLabel">version</dt>
+          <dd id="version">1.0.7</dd>
+        </div>
+        <div>
+          <dt data-i18n="authorLabel">Author</dt>
+          <dd>Wacallanaides</dd>
+        </div>
+        <div>
+          <dt data-i18n="thanksLabel">Thanks</dt>
+          <dd data-i18n="thanksName">Chat GPT Plus</dd>
+        </div>
+      </dl>
+    </section>
+  </main>
+
+  <script src="js/options.js"></script>
+</body>
+</html>
